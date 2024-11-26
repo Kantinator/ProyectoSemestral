@@ -9,34 +9,53 @@ namespace ProyectoSemestral.bd
 {
     internal class Conexion
     {
-        private static SqlConnection conexion;
+        private static string cadenaConexion = "Server=DESKTOP-2PNP6F6\\SQLBRIEF;Database=GestionTiquetes;Integrated Security=True;";
 
-        public static SqlConnection getConexion()
+        // Propiedad para acceder a la cadena de conexión
+        public static string CadenaConexion
         {
-            if (conexion != null)
-            {
-                return conexion;
+            get { return cadenaConexion; }
+        }
 
-            }
-            conexion = new SqlConnection();
-            conexion.ConnectionString = "Data Source = DESKTOP-ISIP9K7\\;Initial Catalog=GimnasioDB;Integrated Security = True";
+        // Método para obtener una conexión abierta
+        public SqlConnection ObtenerConexion()
+        {
+            SqlConnection conexion = new SqlConnection(cadenaConexion);
+            conexion.Open();
+            return conexion;
+        }
+
+        // Método para abrir la conexión
+        public static SqlConnection AbrirConexion()
+        {
+            SqlConnection conn = new SqlConnection(cadenaConexion);
             try
             {
-                conexion.Open();
-                return conexion;
+                if (conn.State == System.Data.ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show("Error de Conexion" + ex.Message);
-                return null;
-
+                throw new Exception("Error al abrir la conexión a la base de datos: " + ex.Message);
             }
+            return conn;
         }
-        public static void cerrarConexion()
+
+        // Método para cerrar la conexión
+        public static void CerrarConexion(SqlConnection conn)
         {
-            if (conexion != null)
+            try
             {
-                conexion.Close();
+                if (conn != null && conn.State == System.Data.ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al cerrar la conexión a la base de datos: " + ex.Message);
             }
         }
     }
