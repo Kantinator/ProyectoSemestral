@@ -56,10 +56,15 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="modelo\Agentes.cs" />
+    <Compile Include="modelo\AperturaTiquete.cs" />
     <Compile Include="modelo\AreaAtencion.cs" />
     <Compile Include="modelo\AsignacionTecnico.cs" />
-    <Compile Include="modelo\Autenticacion.cs" />
+<Compile Include="modelo\Autenticacion.cs" />
+<Compile Include="modelo\NivelPrioridad.cs" />
+
     <Compile Include="modelo\Supervisor.cs" />
+    <Compile Include="modelo\TipoSolicitud.cs" />
+    <Compile Include="modelo\TiquetEstatusX.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="vista\AgentesForm.cs">
