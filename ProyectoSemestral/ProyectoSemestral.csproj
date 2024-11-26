@@ -59,7 +59,9 @@
     <Compile Include="modelo\AperturaTiquete.cs" />
     <Compile Include="modelo\AreaAtencion.cs" />
     <Compile Include="modelo\AsignacionTecnico.cs" />
-    <Compile Include="modelo\NivelPrioridad.cs" />
+<Compile Include="modelo\Autenticacion.cs" />
+<Compile Include="modelo\NivelPrioridad.cs" />
+
     <Compile Include="modelo\Supervisor.cs" />
     <Compile Include="modelo\TipoSolicitud.cs" />
     <Compile Include="modelo\TiquetEstatusX.cs" />
@@ -82,6 +84,12 @@
     </Compile>
     <Compile Include="vista\AsignacionTecnicoForm.Designer.cs">
       <DependentUpon>AsignacionTecnicoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="vista\SupervisoresFrom.cs">
       <SubType>Form</SubType>
@@ -106,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="vista\AsignacionTecnicoForm.resx">
       <DependentUpon>AsignacionTecnicoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vista\SupervisoresFrom.resx">
       <DependentUpon>SupervisoresFrom.cs</DependentUpon>
