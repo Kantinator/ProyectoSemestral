@@ -19,7 +19,7 @@ namespace ProyectoSemestral.bd
 
             }
             conexion = new SqlConnection();
-            conexion.ConnectionString = "Data Source = DESKTOP-ISIP9K7\\;Initial Catalog=GimnasioDB;Integrated Security = True";
+            conexion.ConnectionString = "Data Source=DESKTOP-6EBHSTK;Initial Catalog=GestionTiquetes;Integrated Security=True";
             try
             {
                 conexion.Open();
@@ -29,7 +29,6 @@ namespace ProyectoSemestral.bd
             {
                 System.Windows.Forms.MessageBox.Show("Error de Conexion" + ex.Message);
                 return null;
-
             }
         }
         public static void cerrarConexion()
